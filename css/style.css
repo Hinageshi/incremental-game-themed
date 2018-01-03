@@ -1,0 +1,17 @@
+.div-change div:hover{
+    background: #00a651;
+    color: #ffffff;
+}
+
+.fixed-panel {
+  height: 650px;
+  overflow-y: scroll;
+}
+
+.div-unclickable {
+	pointer-events: none;
+}
+
+.div-invisible {
+	display: none;
+}

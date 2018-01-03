@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/font-awesome.css">
+	</head>
+
+	<body>
+
+
+	<nav class="navbar navbar-default">
+  		<div class="container-fluid">
+    		<div class="navbar-header">
+    			<a href="#" class="navbar-brand"><img src="img/ac_logo.jpg" height="20" width="20"></a>
+      			<a class="navbar-brand" href="https://giphy.com/gifs/B3hcUhLX3BFHa/fullscreen">Bell Clicker</a>
+    		</div>
+    		<div class="collapse navbar-collapse" id="navbar-collapse">
+    			<ul class="nav navbar-nav navbar-left">
+            	</ul>
+            </div>
+  		</div>
+	</nav>
+.
+	<div id="main-content" class="container-fluid col-no-padding">
+
+		<div class="col-md-6 padding-0 col-no-padding" align="center">
+			<div class="center-block">
+				<p>
+					<h2>
+						<span id='txtNbBells'></span> Bells
+					</h2>
+					<h5>
+						<span id='txtBellsPerSecond'></span> bells per second
+					</h5>
+				</p>
+			</div>
+			<br/>
+			<br/>
+			<img id="imgBell" src="img/bell.png" onclick="addSomething('bell');">
+		</div>
+
+		<div class="col-md-3 padding-0 col-no-padding">
+        	<div class="panel panel-default">
+        		<div class="panel-heading">
+            		<h4 class="panel-title">
+              			<i class="fa fa-money"></i> Store
+            		</h4>
+          		</div>
+          		<div class="panel-body scrollable large div-change fixed-panel" id="StorePanel">
+					<div id="divWateringCan" class="well row" onclick="addSomething('watering_can');" data-toggle="popover" data-title="Object : Watering Can" data-content="Buy a watering can to an animal, it will harvest flowers and sell them for you. Produces 10 bells per second.">
+						<div class="col-xs-3">
+							<img src="img/wateringcan_classic.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Watering Can
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png"><span id='txtCostWateringCans'></span>
+							</div>
+						</div>
+						<div class="col-xs-1">
+							<h4><span id='txtNbWateringCans'></span></h4>
+						</div>
+					</div>
+					<div id="divNet" class="well row" onclick="addSomething('net');" data-toggle="popover" data-title="Object : Net" data-content="Buy a net to an animal, it will catch bugs and sell them for you. Produces 25 bells per second.">
+						<div class="col-xs-3">
+							<img src="img/net_classic.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Net
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png"><span id='txtCostNets'></span>
+							</div>
+						</div>
+						<div class="col-xs-1">
+							<h4><span id='txtNbNets'></span></h4>
+						</div>
+					</div>
+					<div id="divFishingRod" class="well row" onclick="addSomething('fishing_rod');" data-toggle="popover" data-title="Object : Fishing Rod" data-content="Buy a fishing rod to an animal, it will catch fish and sell them for you. Produces 50 bells per second.">
+						<div class="col-xs-3">
+							<img src="img/fishingrod_classic.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Fishing Rod
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png"><span id='txtCostFishingRods'></span>
+							</div>
+						</div>
+						<div class="col-xs-1">
+							<h4><span id='txtNbFishingRods'></span></h4>
+						</div>
+					</div>
+					<div id="divShovel" class="well row" onclick="addSomething('shovel');" data-toggle="popover" data-title="Object : Shovel" data-content="Buy a shovel to an animal, it will search for fossils and sell them for you. Produces 200 bells per second.">
+						<div class="col-xs-3">
+							<img src="img/shovel_classic.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Shovel
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png"><span id='txtCostShovels'></span>
+							</div>
+						</div>
+						<div class="col-xs-1">
+							<h4><span id='txtNbShovels'></span></h4>
+						</div>
+					</div>
+					<div id="divSlingshot" class="well row" onclick="addSomething('slingshot');" data-toggle="popover" data-title="Object : Slingshot" data-content="Buy a slingshot to an animal, it will explode balloons carrying presents and sell them for you. Produces 500 bells per second.">
+						<div class="col-xs-3">
+							<img src="img/slingshot_classic.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Slingshot
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png"><span id='txtCostSlingshots'></span>
+							</div>
+						</div>
+						<div class="col-xs-1">
+							<h4><span id='txtNbSlingshots'></span></h4>
+						</div>
+					</div>
+          		</div>
+        	</div>
+     	</div>
+
+     	<div class="col-md-3 padding-0 col-no-padding">
+        	<div class="panel panel-default panel-stick">
+          		<div class="panel-heading">
+            		<h4 class="panel-title">
+              			<i class="fa fa-line-chart"></i> Upgrades
+            		</h4>
+          		</div>
+          		<div class="panel-body scrollable large div-change fixed-panel" id="UpgradesPanel">
+        			<div id="divApple" class="well row" data-toggle="popover" data-title="Upgrade : Apples" data-content="You discovered an apple tree. You can now gather apples and sell them. Your basic earnings are now 10 bells per second." onclick="addUpgrade('apple');">
+						<div class="col-xs-3">
+							<img src="img/apple.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Apple
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">1000
+							</div>
+						</div>
+					</div>
+					<div id="divCherry" class="well row" data-toggle="popover" data-title="Upgrade : Cherries" data-content="You discovered a cherry tree. You can now gather cherries and sell them. Your basic earnings per second are now doubled." onclick="addUpgrade('cherry');">
+						<div class="col-xs-3">
+							<img src="img/cherry.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Cherry
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">5000
+							</div>
+						</div>
+					</div>
+					<div id="divOrange" class="well row" data-toggle="popover" data-title="Upgrade : Oranges" data-content="You discovered an orange tree. You can now gather oranges and sell them. Your basic earnings per second are now doubled." onclick="addUpgrade('orange');">
+						<div class="col-xs-3">
+							<img src="img/orange.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Orange
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">15000
+							</div>
+						</div>
+					</div>
+					<div id="divPeach" class="well row" data-toggle="popover" data-title="Upgrade : Peaches" data-content="You discovered a peach tree. You can now gather peaches and sell them. Your basic earnings per second are now doubled." onclick="addUpgrade('peach');">
+						<div class="col-xs-3">
+							<img src="img/peach.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Peach
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">30000
+							</div>
+						</div>
+					</div>
+					<div id="divPear" class="well row" data-toggle="popover" data-title="Upgrade : Pears" data-content="You discovered a pear tree. You can now gather pears and sell them. Your basic earnings per second are now doubled." onclick="addUpgrade('pear');">
+						<div class="col-xs-3">
+							<img src="img/pear.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Pear
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">50000
+							</div>
+						</div>
+					</div>
+					<div id="divBanana" class="well row" data-toggle="popover" data-title="Upgrade : Bananas" data-content="You discovered a banana tree. You can now gather bananas and sell them. Your basic earnings per second are now doubled." onclick="addUpgrade('banana');">
+						<div class="col-xs-3">
+							<img src="img/banana.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Banana
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">80000
+							</div>
+						</div>
+					</div>
+					<div id="divCoconut" class="well row" data-toggle="popover" data-title="Upgrade : Coconuts" data-content="You discovered a coconut tree. You can now gather coconuts and sell them. Your basic earnings per second are now doubled." onclick="addUpgrade('coconut');">
+						<div class="col-xs-3">
+							<img src="img/coconut.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Coconut
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">100000
+							</div>
+						</div>
+					</div>
+					<div id="divDurian" class="well row" data-toggle="popover" data-title="Upgrade : Durians" data-content="You discovered a durian tree. You can now gather durians and sell them. Your basic earnings per second are now doubled." onclick="addUpgrade('durian');">
+						<div class="col-xs-3">
+							<img src="img/durian.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Durian
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">120000
+							</div>
+						</div>
+					</div>
+					<div id="divLemon" class="well row" data-toggle="popover" data-title="Upgrade : Lemons" data-content="You discovered a lemon tree. You can now gather lemons and sell them. Your basic earnings per second are now doubled." onclick="addUpgrade('lemon');">
+						<div class="col-xs-3">
+							<img src="img/lemon.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Lemon
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">135000
+							</div>
+						</div>
+					</div>
+					<div id="divLychee" class="well row" data-toggle="popover" data-title="Upgrade : Lychees" data-content="You discovered a lychee tree. You can now gather lychees and sell them. Your basic earnings per second are now doubled." onclick="addUpgrade('lychee');">
+						<div class="col-xs-3">
+							<img src="img/lychee.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Lychee
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">170000
+							</div>
+						</div>
+					</div>
+					<div id="divMango" class="well row" data-toggle="popover" data-title="Upgrade : Mangos" data-content="You discovered a mango tree. You can now gather mangos and sell them. Your basic earnings per second are now doubled." onclick="addUpgrade('mango');">
+						<div class="col-xs-3">
+							<img src="img/mango.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Mango
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">200000
+							</div>
+						</div>
+					</div>
+					<div id="divPersimmon" class="well row" data-toggle="popover" data-title="Upgrade : Persimmons" data-content="You discovered a persimmon tree. You can now gather persimmons and sell them. Your basic earnings per second are now doubled." onclick="addUpgrade('persimmon');">
+						<div class="col-xs-3">
+							<img src="img/persimmon.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Persimmon
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">250000
+							</div>
+						</div>
+					</div>
+					<div id="divRose" class="well row" data-toggle="popover" data-title="Upgrade : Rose seeds" data-content="You discovered rose seeds. Your animals can now cultivate roses and sell them. Your earnings from watering cans are now doubled." onclick="addUpgrade('rose');">
+						<div class="col-xs-3">
+							<img src="img/rose.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Rose
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">5000
+							</div>
+						</div>
+					</div>
+					<div id="divCosmos" class="well row" data-toggle="popover" data-title="Upgrade : Cosmos seeds" data-content="You discovered cosmos seeds. Your animals can now cultivate cosmos and sell them. Your earnings from watering cans are now doubled." onclick="addUpgrade('cosmos');">
+						<div class="col-xs-3">
+							<img src="img/cosmos.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Cosmos
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">12500
+							</div>
+						</div>
+					</div>
+					<div id="divTulip" class="well row" data-toggle="popover" data-title="Upgrade : Tulip seeds" data-content="You discovered tulip seeds. Your animals can now cultivate tulips and sell them. Your earnings from watering cans are now doubled." onclick="addUpgrade('tulip');">
+						<div class="col-xs-3">
+							<img src="img/tulip.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Tulip
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">25000
+							</div>
+						</div>
+					</div>
+					<div id="divPansy" class="well row" data-toggle="popover" data-title="Upgrade : Pansy seeds" data-content="You discovered pansy seeds. Your animals can now cultivate pansies and sell them. Your earnings from watering cans are now doubled." onclick="addUpgrade('pansy');">
+						<div class="col-xs-3">
+							<img src="img/pansy.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Pansy
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">38500
+							</div>
+						</div>
+					</div>
+					<div id="divLily" class="well row" data-toggle="popover" data-title="Upgrade : Lily seeds" data-content="You discovered lily seeds. Your animals can now cultivate lillies and sell them. Your earnings from watering cans are now doubled." onclick="addUpgrade('lily');">
+						<div class="col-xs-3">
+							<img src="img/lily.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Lily
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">65000
+							</div>
+						</div>
+					</div>
+					<div id="divViolet" class="well row" data-toggle="popover" data-title="Upgrade : Violet seeds" data-content="You discovered violet seeds. Your animals can now cultivate violets and sell them. Your earnings from watering cans are now doubled." onclick="addUpgrade('violet');">
+						<div class="col-xs-3">
+							<img src="img/violet.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Violet
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">92000
+							</div>
+						</div>
+					</div>
+					<div id="divCarnation" class="well row" data-toggle="popover" data-title="Upgrade : Carnation seeds" data-content="You discovered carnation seeds. Your animals can now cultivate carnations and sell them. Your earnings from watering cans are now doubled." onclick="addUpgrade('carnation');">
+						<div class="col-xs-3">
+							<img src="img/carnation.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Carnation
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">125000
+							</div>
+						</div>
+					</div>
+					<div id="divJacobLadder" class="well row" data-toggle="popover" data-title="Upgrade : Jacob Ladder seeds" data-content="You discovered jacob ladder seeds. Your animals can now cultivate jacob ladders and sell them. Your earnings from watering cans are now doubled." onclick="addUpgrade('jacob_ladder');">
+						<div class="col-xs-3">
+							<img src="img/jacob_ladder.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Jacob's Ladder
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">200000
+							</div>
+						</div>
+					</div>
+					<div id="divPondSmelt" data-toggle="popover" data-title="Upgrade : Pond Smelt" data-content="You discovered a new specy : the Pond Smelt. Your animals can now fish pond smelts and sell them. Your earnings from fishing rods are now doubled." class="well row" onclick="addUpgrade('pond_smelt');">
+						<div class="col-xs-3">
+							<img src="img/pond_smelt.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Pond Smelt
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">10000
+							</div>
+						</div>
+					</div>
+					<div id="divSweetfish" class="well row" data-toggle="popover" data-title="Upgrade : Sweetfish" data-content="You discovered a new specy : the Sweetfish. Your animals can now fish sweetfishes and sell them. Your earnings from fishing rods are now doubled." onclick="addUpgrade('sweetfish');">
+						<div class="col-xs-3">
+							<img src="img/sweetfish.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Sweetfish
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">30000
+							</div>
+						</div>
+					</div>
+					<div id="divRainbowTrout" class="well row" data-toggle="popover" data-title="Upgrade : Rainbow Trout" data-content="You discovered a new specy : the Rainbow Trout. Your animals can now fish rainbow trouts and sell them. Your earnings from fishing rods are now doubled." onclick="addUpgrade('rainbow_trout');">
+						<div class="col-xs-3">
+							<img src="img/rainbow_trout.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Rainbow Trout
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">75000
+							</div>
+						</div>
+					</div>
+					<div id="divStringfish" data-toggle="popover" data-title="Upgrade : Stringfish" data-content="You discovered a new specy : the Stringfish. Your animals can now fish stringfishes and sell them. Your earnings from fishing rods are now doubled." class="well row" onclick="addUpgrade('stringfish');">
+						<div class="col-xs-3">
+							<img src="img/stringfish.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Stringfish
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">92500
+							</div>
+						</div>
+					</div>
+					<div id="divKingSalmon" class="well row" data-toggle="popover" data-title="Upgrade : King Salmon" data-content="You discovered a new specy : the King Salmon. Your animals can now fish king salmons and sell them. Your earnings from fishing rods are now doubled." onclick="addUpgrade('king_salmon');">
+						<div class="col-xs-3">
+							<img src="img/king_salmon.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								King Salmon
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">115000
+							</div>
+						</div>
+					</div>
+					<div id="divDorado" class="well row" data-toggle="popover" data-title="Upgrade : Dorado" data-content="You discovered a new specy : the Dorado. Your animals can now fish dorados and sell them. Your earnings from fishing rods are now doubled." onclick="addUpgrade('dorado');">
+						<div class="col-xs-3">
+							<img src="img/dorado.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Dorado
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">172000
+							</div>
+						</div>
+					</div>
+					<div id="divArowana" class="well row" data-toggle="popover" data-title="Upgrade : Arowana" data-content="You discovered a new specy : the Arowana. Your animals can now fish arowanas and sell them. Your earnings from fishing rods are now doubled." onclick="addUpgrade('arowana');">
+						<div class="col-xs-3">
+							<img src="img/arowana.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Arowana
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">212000
+							</div>
+						</div>
+					</div>
+					<div id="divArapaima" class="well row" data-toggle="popover" data-title="Upgrade : Arapaima" data-content="You discovered a new specy : the Arapaima. Your animals can now fish arapaimas and sell them. Your earnings from fishing rods are now doubled." onclick="addUpgrade('arapaima');">
+						<div class="col-xs-3">
+							<img src="img/arapaima.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Arapaima
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">250000
+							</div>
+						</div>
+					</div>
+					<div id="divMoth" class="well row" data-toggle="popover" data-title="Upgrade : Moth" data-content="You discovered a new specy : the Moth. Your animals can now catch moths and sell them. Your earnings from nets are now doubled." onclick="addUpgrade('moth');">
+						<div class="col-xs-3">
+							<img src="img/moth.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Moth
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">15000
+							</div>
+						</div>
+					</div>
+					<div id="divCommonButterfly" class="well row" data-toggle="popover" data-title="Upgrade : Common Butterfly" data-content="You discovered a new specy : the Common Butterfly. Your animals can now catch common butterflies and sell them. Your earnings from nets are now doubled." onclick="addUpgrade('common_butterfly');">
+						<div class="col-xs-3">
+							<img src="img/common_butterfly.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Common Butterfly
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">30000
+							</div>
+						</div>
+					</div>
+					<div id="divYellowButterfly" class="well row" data-toggle="popover" data-title="Upgrade : Yellow Butterfly" data-content="You discovered a new specy : the Yellow Butterfly. Your animals can now catch yellow butterflies and sell them. Your earnings from nets are now doubled." onclick="addUpgrade('yellow_butterfly');">
+						<div class="col-xs-3">
+							<img src="img/yellow_butterfly.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Yellow Butterfly
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">50000
+							</div>
+						</div>
+					</div>
+					<div id="divMachaon" class="well row" data-toggle="popover" data-title="Upgrade : Machaon" data-content="You discovered a new specy : the Machaon. Your animals can now catch machaons and sell them. Your earnings from nets are now doubled." onclick="addUpgrade('machaon');">
+						<div class="col-xs-3">
+							<img src="img/machaon.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Machaon
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">95000
+							</div>
+						</div>
+					</div>
+					<div id="divMonarch" class="well row" data-toggle="popover" data-title="Upgrade : Monarch" data-content="You discovered a new specy : the Monarch. Your animals can now catch monarchs and sell them. Your earnings from nets are now doubled." onclick="addUpgrade('monarch');">
+						<div class="col-xs-3">
+							<img src="img/monarch.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Monarch
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">123000
+							</div>
+						</div>
+					</div>
+					<div id="divEmperorButterfly" class="well row" data-toggle="popover" data-title="Upgrade : Emperor Butterfly" data-content="You discovered a new specy : the Emperor Butterfly. Your animals can now catch emperor butterflies and sell them. Your earnings from nets are now doubled." onclick="addUpgrade('emperor_butterfly');">
+						<div class="col-xs-3">
+							<img src="img/emperor_butterfly.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Emperor Butterfly
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">175000
+							</div>
+						</div>
+					</div>
+					<div id="divAgrias" class="well row" data-toggle="popover" data-title="Upgrade : Agrias" data-content="You discovered a new specy : the Agrias. Your animals can now catch agrias and sell them. Your earnings from nets are now doubled." onclick="addUpgrade('agrias');">
+						<div class="col-xs-3">
+							<img src="img/agrias.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Agrias
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">200000
+							</div>
+						</div>
+					</div>
+					<div id="divRajaBrookeButterfly" class="well row" data-toggle="popover" data-title="Upgrade : Raja Brooke Butterfly" data-content="You discovered a new specy : the Raja Brooke Butterfly. Your animals can now catch raja brooke butterflies and sell them. Your earnings from nets are now doubled." onclick="addUpgrade('raja_brooke_butterfly');">
+						<div class="col-xs-3">
+							<img src="img/raja_brooke_butterfly.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Raja Brooke Butterfly
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">350000
+							</div>
+						</div>
+					</div>
+					<div id="divBirdwingButterfly" class="well row" data-toggle="popover" data-title="Upgrade : Birdwing Butterfly" data-content="You discovered a new specy : the Birdwing Butterfly. Your animals can now catch birdwing butterflies and sell them. Your earnings from nets are now doubled." onclick="addUpgrade('birdwing_butterfly');">
+						<div class="col-xs-3">
+							<img src="img/birdwing_butterfly.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Birdwing Butterfly
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">500000
+							</div>
+						</div>
+					</div>
+					<div id="divFossil" class="well row" data-toggle="popover" data-title="Upgrade : Raw Fossils" data-content="Your animals can now find raw fossils in the ground. Your earnings from shovels are now multiplied by ten." onclick="addUpgrade('fossil_raw');">
+						<div class="col-xs-3">
+							<img src="img/fossil.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Fossil
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">500000
+							</div>
+						</div>
+					</div>
+					<div id="divBones" class="well row" data-toggle="popover" data-title="Upgrade : Clear Fossils" data-content="Your animals can now find clear fossils in the ground. Your earnings from shovels are now multiplied by ten." onclick="addUpgrade('fossil_bones');">
+						<div class="col-xs-3">
+							<img src="img/bones.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Bones
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">750000
+							</div>
+						</div>
+					</div>
+					<div id="divPoutchPresent" class="well row" data-toggle="popover" data-title="Upgrade : Poutch Presents" data-content="Your animals can explode balloons carrying poutch presents in the sky. Your earnings from slingshots are now multiplied by ten." onclick="addUpgrade('poutch_present');">
+						<div class="col-xs-3">
+							<img src="img/poutch_present.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Poutch Present
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">800000
+							</div>
+						</div>
+					</div>
+					<div id="divGreenPresent" class="well row" data-toggle="popover" data-title="Upgrade : Green Presents" data-content="Your animals can explode balloons carrying green presents in the sky. Your earnings from slingshots are now multiplied by ten." onclick="addUpgrade('green_present');">
+						<div class="col-xs-3">
+							<img src="img/green_present.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Green Present
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">1200000
+							</div>
+						</div>
+					</div>
+					<div id="divRedPresent" class="well row" data-toggle="popover" data-title="Upgrade : Red Presents" data-content="Your animals can explode balloons carrying red presents in the sky. Your earnings from slingshots are now multiplied by ten." onclick="addUpgrade('red_present');">
+						<div class="col-xs-3">
+							<img src="img/red_present.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Red Present
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">1500000
+							</div>
+						</div>
+					</div>
+					<div id="divWateringCanSilver" class="well row" data-toggle="popover" data-title="Upgrade : Silver Watering Can" data-content="You bought silver watering cans for your animals to replace their normal ones. Your watering cans speed up your earnings from them by 25%." onclick="addUpgrade('watering_can_silver');">
+						<div class="col-xs-3">
+							<img src="img/wateringcan_silver.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Silver Watering Can
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">200000
+							</div>
+						</div>
+					</div>
+					<div id="divWateringCanGold" class="well row" data-toggle="popover" data-title="Upgrade : Gold Watering Can" data-content="You bought gold watering cans for your animals to replace their silver ones. Your watering cans speed up your earnings from them by 50%." onclick="addUpgrade('watering_can_gold');">
+						<div class="col-xs-3">
+							<img src="img/wateringcan_gold.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Golden Watering Can
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">1000000
+							</div>
+						</div>
+					</div>
+					<div id="divNetSilver" class="well row" data-toggle="popover" data-title="Upgrade : Silver Net" data-content="You bought silver nets for your animals to replace their normal ones. Your nets speed up your earnings from them by 25%." onclick="addUpgrade('net_silver');">
+						<div class="col-xs-3">
+							<img src="img/net_silver.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Silver Net
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">500000
+							</div>
+						</div>
+					</div>
+					<div id="divNetGold" class="well row" data-toggle="popover" data-title="Upgrade : Gold Net" data-content="You bought gold nets for your animals to replace their silver ones. Your nets speed up your earnings from them by 50%." onclick="addUpgrade('net_gold');">
+						<div class="col-xs-3">
+							<img src="img/net_gold.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Golden Net
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">2500000
+							</div>
+						</div>
+					</div>
+					<div id="divFishingRodSilver" class="well row" data-toggle="popover" data-title="Upgrade : Silver Fishing Rod" data-content="You bought silver fishing rods for your animals to replace their normal ones. Your fishing rods speed up your earnings from them by 25%." onclick="addUpgrade('fishing_rod_silver');">
+						<div class="col-xs-3">
+							<img src="img/fishingrod_silver.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Silver Fishing Rod
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">800000
+							</div>
+						</div>
+					</div>
+					<div id="divFishingRodGold" class="well row" data-toggle="popover" data-title="Upgrade : Gold Fishing Rod" data-content="You bought gold fishing rods for your animals to replace their silver ones. Your fishing rods speed up your earnings from them by 50%." onclick="addUpgrade('fishing_rod_gold');">
+						<div class="col-xs-3">
+							<img src="img/fishingrod_gold.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Golden Fishing Rod
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">4000000
+							</div>
+						</div>
+					</div>
+					<div id="divShovelSilver" class="well row" data-toggle="popover" data-title="Upgrade : Silver Shovel" data-content="You bought silver shovels for your animals to replace their normal ones. Your shovels speed up your earnings from them by 25%." onclick="addUpgrade('shovel_silver');">
+						<div class="col-xs-3">
+							<img src="img/shovel_silver.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Silver Shovel
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">1100000
+							</div>
+						</div>
+					</div>
+					<div id="divShovelGold" class="well row" data-toggle="popover" data-title="Upgrade : Gold Shovel" data-content="You bought gold shovels for your animals to replace their silver ones. Your shovels speed up your earnings from them by 50%." onclick="addUpgrade('shovel_gold');">
+						<div class="col-xs-3">
+							<img src="img/shovel_gold.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Golden Shovel
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">5500000
+							</div>
+						</div>
+					</div>
+					<div id="divSlingshotSilver" class="well row" data-toggle="popover" data-title="Upgrade : Silver Slingshot" data-content="You bought silver slingshots for your animals to replace their normal ones. Your slingshots speed up your earnings from them by 25%." onclick="addUpgrade('slingshot_silver');">
+						<div class="col-xs-3">
+							<img src="img/slingshot_silver.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Silver Slingshot
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">1400000
+							</div>
+						</div>
+					</div>
+					<div id="divSlingshotGold" class="well row" data-toggle="popover" data-title="Upgrade : Gold Slingshot" data-content="You bought gold slingshots for your animals to replace their silver ones. Your slingshots speed up your earnings from them by 50%." onclick="addUpgrade('slingshot_gold');">
+						<div class="col-xs-3">
+							<img src="img/slingshot_gold.png" height="40" width="40">
+						</div>
+						<div class="col-xs-7">
+							<div class="row">
+								Golden Slingshot
+							</div>
+							<div class="row">
+								<img src="img/bell_piece.png">7000000
+							</div>
+						</div>
+					</div>
+          		</div>
+
+        	</div>
+      	</div>
+    </div>
+
+	</body>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/myScript.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+</html>
